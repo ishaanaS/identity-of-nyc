@@ -62,7 +62,7 @@ hoverTriggers.forEach(trigger => {
         const imageName = trigger.getAttribute('data-image');
         if (imageName) {
             // Construct path to local images folder
-            hoverImg.src = `images/${imageName}`;
+            hoverImg.src = imageName;
             hoverImage.classList.add('active');
         }
     });
