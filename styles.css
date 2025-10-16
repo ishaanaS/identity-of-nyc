@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('cityy.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#qr-container {
+  position: relative;
+  display: inline-grid;
+  /* gap: 1px; */
+  padding: 20px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  border-radius: 10px;
+  /* backdrop-filter: blur(10px); */
+}
+
+/* match module/spacer sizes */
+.qr-module,
+.qr-spacer {
+  width: 28px;
+  height: 24px;
+}
+
+.qr-module {
+  position: relative;
+  background-size: 500%;
+  background-position: center;
+  transition: opacity 0.25s ease, transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.qr-module::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.qr-module.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hotspot squares (in the 12-square clusters) */
+.qr-button {
+  outline: 1px solid rgba(255, 255, 255, 0.15);
+  /* box-shadow: 0 0 0 0 rgba(0,0,0,0); */
+}
+
+.qr-button:hover {
+  transform: translateY(-1px);
+}
+
+
+.cluster-active-left,
+.cluster-active-right {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* group hover colors for the 3×3 centers */
+.cluster-active-left {
+  background-image: none !important;
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.cluster-active-right {
+  background-image: none !important;
+  background-color: rgb(0, 0, 0) !important;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-content {
+  background: white;
+  padding: 40px;
+  max-width: 500px;
+  /* text-align: center; */
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  transform: rotate(5deg) skew(30deg);
+  font-size: 2.5rem;
+  padding-top: 5px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.popup-content p {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.qr-info-module {
+  /* outline: 2px solid rgba(0, 0, 0, 0.8) !important; */
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  background-image: none !important;
+}
+
+.qr-info-module:hover {
+  background-color: rgba(6, 155, 255, 0.9) !important;
+  background-image: none !important;
+  transform: scale(1.15) translateY(-2px);
+  cursor: pointer;
+  z-index: 10;
+}

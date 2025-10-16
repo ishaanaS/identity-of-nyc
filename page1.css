@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: black;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.scroll-container {
+    display: flex;
+    height: 100vh;
+    padding: 50px 40px;
+    gap: 15px;
+    width: max-content;
+}
+
+.column {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* transition: opacity 0.6s ease, transform 0.6s ease; */
+    align-self: flex-start;
+}
+
+.column:nth-child(2) {
+    margin-top: 255px;
+    width: 400px;
+    height: 100px;
+    margin-right: 30px;
+}
+
+.column:nth-child(3) {
+
+    width: 450px;
+}
+
+.column:nth-child(4) {
+    margin-top: 120px;
+
+}
+
+.column:nth-child(5) {
+    margin-top: 80px;
+}
+
+.column:nth-child(6) {
+       width: 350px;
+    margin-top: 260px;
+}
+.column:nth-child(7) {
+    margin-top: 260px;
+
+
+}
+/* .column.fade-out {
+    opacity: 0;
+    transform: translateX(-30px);
+} */
+
+.text-block {
+    background: white;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: justify;
+    color: #1a1a1a;
+}
+
+.text-block p {
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 70px;
+    width: 700px;
+    margin-bottom: 30px;
+     margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: rotate(-5deg) skew(30deg);
+    line-height: 1;
+    color: red;
+}
+
+
+::-webkit-scrollbar {
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.hover-trigger {
+    color: #2881ff;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+}
+
+.hover-image {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 60vh;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.hover-image.active {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.hover-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.home-button {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    width: 60px;
+    height: 60px;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease;
+    z-index: 1001;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+}
+
+.home-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+@font-face {
+    font-family: 'Pirelli';
+    src: url('PirelliCLLVIPTrial copy.ttf') format('truetype');
+    font-weight: 500;
+    /* font-style: normal; */
+}
